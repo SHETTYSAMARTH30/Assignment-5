@@ -1,0 +1,180 @@
+figure {
+    @include heightWidth(400px, 190px);
+    @include break(960px) {
+      @include heightWidth(inherit, 140px);
+      @include floatClearSet(none, "");
+      background-position: center;
+    }
+    @include break(460px) {
+      background-size: contain;
+      height: 100px;
+    }
+    background: url($background-nav) no-repeat 0 50px;
+    @include floatClearSet(left, "");
+    display: block;
+    @include fixMarginPadding(0, null);
+  }
+  nav {
+    @include heightWidth(540px, 190px);
+    @include floatClearSet(left, "");
+    text-align: right;
+    @include break(960px) {
+      @include heightWidth(inherit, 50px);
+      @include floatClearSet(none, "");
+      text-align: center;
+    }
+    @include break(460px) {
+      margin-bottom: 40px !important;
+    }
+    ul {
+      list-style-type: none;
+      @include fixMarginPadding(95px 0 0 0, null);
+      @include break(960px) {
+        @include fixMarginPadding(0 0 0 0, null);
+      }
+  
+      li {
+        display: inline;
+        font-size: 0.8em;
+        @include fixMarginPadding(0 10px 0 0, null);
+  
+        @include break(958px) {
+          font-size: 1em;
+          @include fixMarginPadding(0 10px, null);
+        }
+  
+        @include break(768px) {
+          font-size: 0.8em;
+          @include fixMarginPadding(0 5px, null);
+        }
+        & a {
+          color: $red;
+          text-decoration: none;
+          letter-spacing: -0.01em;
+          &:hover {
+            color: $background;
+          }
+        }
+      }
+    }
+  }
+  figure {
+    @include heightWidth(400px, 190px);
+    @include break(958px) {
+      @include heightWidth(inherit, 140px);
+      @include floatClearSet(none, "");
+      background-position: center;
+    }
+    @include break(460px) {
+      background-size: contain;
+      height: 100px;
+    }
+    background: url($background-nav) no-repeat 0 50px;
+    @include floatClearSet(left, "");
+    display: block;
+    @include fixMarginPadding(0, null);
+  }
+  nav {
+    @include heightWidth(540px, 190px);
+    @include floatClearSet(left, "");
+    text-align: right;
+    @include break(960px) {
+      @include heightWidth(inherit, 50px);
+      @include floatClearSet(none, "");
+      text-align: center;
+    }
+    @include break(458px) {
+      margin-bottom: 40px !important;
+    }
+    ul {
+      list-style-type: none;
+      @include fixMarginPadding(95px 0 0 0, null);
+      @include break(960px) {
+        @include fixMarginPadding(0 0 0 0, null);
+      }
+  
+      li {
+        display: inline;
+        font-size: 0.8em;
+        @include fixMarginPadding(0 10px 0 0, null);
+  
+        @include break(960px) {
+          font-size: 1em;
+          @include fixMarginPadding(0 10px, null);
+        }
+  
+        @include break(768px) {
+          font-size: 0.8em;
+          @include fixMarginPadding(0 5px, null);
+        }
+        & a {
+          color: $red;
+          text-decoration: none;
+          letter-spacing: -0.01em;
+          &:hover {
+            color: $background;
+          }
+        }
+      }
+    }
+  }
+
+  .greybar {
+    @include heightWidth(100%, 120px);
+  
+    background: $lightgrey;
+    @include break(460px) {
+      display: none;
+    }
+    @include floatClearSet("", both);
+    @include fixMarginPadding(null, 30px 0 0 0);
+  }
+  footer {
+    @include heightWidth(100%, 120px);
+  
+    background: $darkblue;
+    text-align: center;
+    color: $background;
+    @include fixMarginPadding(null, 50px 0 0 0);
+  
+    @include break(458px) {
+      text-align: center;
+    }
+    p {
+      @include break(458px) {
+        @include floatClearSet(none, "");
+  
+        margin: 0;
+      }
+    }
+    img {
+      @include break(458px) {
+        @include floatClearSet(none, "");
+  
+        margin: 0;
+      }
+    }
+  }
+  .social-media {
+    @include fixMarginPadding(0 auto, null);
+  
+    @include heightWidth(165px, null);
+  
+    a {
+      display: block;
+      @include heightWidth(36px, 36px);
+  
+      text-indent: -9999px;
+    }
+    $footer-list: "one", "two", "three", "four";
+    div {
+      @include floatClearSet(left, "");
+  
+      @include fixMarginPadding(0 5px 0 0, null);
+      @for $count from 1 through length($footer-list) {
+        &.#{nth($footer-list,$count)} {
+          background: url($background-footer) (40- (40 * $count)) + px 0;
+        }
+      }
+    }
+  }

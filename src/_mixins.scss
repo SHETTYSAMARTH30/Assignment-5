@@ -1,0 +1,37 @@
+@mixin fixMarginPadding($m:null,$p:null)
+{
+    margin: $m;
+    padding: $p;
+
+}
+
+@mixin heightWidth($w:null,$h:null)
+{
+    width: $w;
+    height: $h;
+
+}
+
+@mixin break($args...)
+{
+    @if length($args)==1{
+    @media (max-width:nth($args,1)){
+        @content;
+    }
+}
+    
+}
+
+@mixin floatClearSet($float:"",$clear:""){
+    @if ($float!="")
+    {
+    float:$float;
+    }
+    @if($clear!="")
+    {
+        clear:$clear
+
+    }
+    
+}
+

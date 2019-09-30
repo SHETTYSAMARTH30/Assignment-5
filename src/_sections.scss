@@ -1,0 +1,181 @@
+body {
+    font-family: $font-body;
+    font-size: 1em;
+    line-height: 2em;
+    background: url($background-body) $background repeat-x;
+    @include fixMarginPadding(0, null);
+  }
+  main {
+    @include fixMarginPadding(0 auto, 0 10px);
+    @include heightWidth(940px, null);
+    @include break(458px) {
+      @include heightWidth(300px, null);
+    }
+  
+    @include break(765px) {
+      @include heightWidth(461px, null);
+    }
+  
+    @include break(958px) {
+      @include heightWidth(768px, null);
+    }
+  }
+
+  header {
+    @include heightWidth(inherit, null);
+    @include floatClearSet("", both);
+  
+    text-align: center;
+    @include fixMarginPadding(null, 40px 0 0 0);
+  
+    img {
+      max-width: 100%;
+      height: auto;
+      @include break(768px) {
+        @include fixMarginPadding(0 0 100px 0, null);
+      }
+      @include break(458px) {
+        @include fixMarginPadding(0 0 80px 0, null);
+      }
+    }
+    h1 {
+      color: $red;
+      font-weight: 100;
+      font-size: 4em;
+      line-height: 0;
+      @include break(959px) {
+        font-size: 3em;
+      }
+      @include break(767px) {
+        font-size: 2em;
+      }
+      &:first-child {
+        @include break(459px) {
+          @include fixMarginPadding(0 0 80px 0, null);
+        }
+      }
+    }
+  
+    h2 {
+      color: $background;
+      font-weight: 900;
+      font-size: 2.5em;
+      line-height: 0;
+      @include fixMarginPadding(0 0 70px 0, null);
+  
+      @include break(960px) {
+        font-size: 1.5em;
+      }
+      @include break(760px) {
+        font-size: 1em;
+      }
+      @include break(460px) {
+        font-size: 1.4em;
+      }
+    }
+    h3 {
+      color: $darkgrey;
+      font-weight: 400;
+      font-size: 2em;
+      line-height: 0;
+      @include fixMarginPadding(0 0 50px 0, null);
+  
+      @include break(768px) {
+        font-size: 1.5em;
+      }
+      @include break(460px) {
+        color: #fff;
+        font-size: 1em;
+      }
+    }
+  }
+  
+  
+  select {
+    @include break(460px) {
+      @include heightWidth(96%, null);
+    }
+  }
+  #headline {
+    @include heightWidth(100%, 130px);
+  
+    background: $darkred;
+    text-align: center;
+    @include fixMarginPadding(0 auto, null);
+    @include break(960px) {
+      @include heightWidth(inherit, null);
+    }
+  
+    h1 {
+      color: $background;
+      font-size: 2.5em;
+      font-weight: 100;
+      @include fixMarginPadding(null, 50px 0 0 0);
+  
+      @include break(768px) {
+        font-size: 2em;
+        @include fixMarginPadding(null, 50px 0 0 0);
+      }
+      @include break(460px) {
+        font-size: 1.5em;
+        @include fixMarginPadding(null, 30px 0 0 0);
+      }
+    }
+  }
+  
+  #content {
+    @include heightWidth(940px, null);
+    @include fixMarginPadding(20px auto, null);
+    h3 {
+      color: $darkgrey;
+      font-size: 2em;
+      font-weight: 400;
+      @include break(960px) {
+        @include heightWidth(46%, 0 2%);
+      }
+      @include break(458px) {
+        font-size: 1.6em;
+      }
+    }
+    #products {
+      @include heightWidth(460px, null);
+      @include floatClearSet(left, "");
+      @include break(960px) {
+        @include heightWidth(46%, 0 2%);
+      }
+      @include break(768px) {
+        @include heightWidth(96%, null);
+        @include fixMarginPadding(0 2%, null);
+        @include floatClearSet(none, "");
+      }
+  
+      & img {
+        @include floatClearSet(left, "");
+        @include fixMarginPadding(0 20px 0 0, null);
+      }
+      & article {
+        @include fixMarginPadding(0 0 40px 0, null);
+  
+        & img {
+          @include break(458px) {
+            display: none;
+          }
+        }
+      }
+      h4 {
+        line-height: 1em;
+      }
+    }
+    #testimonials {
+      @include heightWidth(460px, null);
+      @include floatClearSet(right, "");
+      @include break(958px) {
+        @include heightWidth(46%, 0 2%);
+      }
+      @include break(768px) {
+        @include heightWidth(96%, null);
+        @include fixMarginPadding(0 2%, null);
+        @include floatClearSet(none, "");
+      }
+    }
+  }
